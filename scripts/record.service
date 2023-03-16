@@ -1,0 +1,8 @@
+[Unit]
+Description=Stereo video recording service
+
+[Service]
+ExecStart=/home/cvision/jetson_alvium_stereo/scripts/stereo.sh
+
+[Install]
+WantedBy=multi-user.target
