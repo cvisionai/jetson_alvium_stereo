@@ -1,4 +1,7 @@
-v4l2-ctl --set-ctrl=exposure_auto_max=1000000 --device=$1
+v4l2-ctl --set-ctrl=exposure_auto=1 --device=$1
+v4l2-ctl --set-ctrl=exposure=10000000 --device=$1
+v4l2-ctl --set-ctrl=gain_auto=1 --device=$1
+#v4l2-ctl --set-ctrl=gain=480 --device=$1
 v4l2-ctl --set-ctrl=exposure_active_line_mode=0 --device=$1
 v4l2-ctl --set-ctrl=exposure_active_line_selector=0 --device=$1
 v4l2-ctl --set-ctrl=trigger_mode=0 --device=$1
