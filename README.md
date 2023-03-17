@@ -31,3 +31,17 @@ sudo groupadd -f -r gpio
 sudo usermod -aG gpio $USER
 sudo wget https://raw.githubusercontent.com/NVIDIA/jetson-gpio/master/lib/python/Jetson/GPIO/99-gpio.rules -O /etc/udev/rules.d/99-gpio.rules
 ```
+* Create a file at `/etc/udev/rules.d/99-record.rules` and put in the following:
+```
+ACTION=="add", SUBSYSTEM=="video4linux", KERNEL=="video0", TAG+="systemd"
+ACTION=="add", SUBSYSTEM=="video4linux", KERNEL=="video1", TAG+="systemd"
+```
+* Copy the systemd service:
+```
+sudo cp scripts/record.service /etc/systemd/system/.
+```
+* Enable the service:
+```
+sudo systemctl enable record
+```
+* Reboot

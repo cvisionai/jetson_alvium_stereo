@@ -6,3 +6,9 @@ ExecStart=/home/cvision/jetson_alvium_stereo/scripts/stereo.sh
 
 [Install]
 WantedBy=multi-user.target
+
+[Unit]
+Requires=dev-video0.device
+Requires=dev-video1.device
+After=dev-video0.device
+After=dev-video1.device
